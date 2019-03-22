@@ -1,0 +1,16 @@
+# Directories and files specified in this file are ignored by git and therefore
+# will not be commited to the remote repository on push
+#
+# Depending on your technology stack, there are folders that should be ignored
+# by default to prevent conflicts when collaborating.
+# Some frameworks automatically include a specific gitignore file when creating
+# a project folder from a template.
+#
+# For example, if your project is build using Node.js, you should add the
+# `node_modules/` folder.
+#
+# Another best practice is to exclude files that contain secret keys or
+# passwords
+#
+# There are several generators for gitignore files available online - just
+# google it!

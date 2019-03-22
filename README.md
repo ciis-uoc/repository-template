@@ -6,7 +6,7 @@ Das Repository bilded einen Scrum-Workflow innerhalb von GitHub ab. Dieser beinh
 
 ## Verwendung des Templates
 
-## Backlog
+### Backlog
 
 Für das Backlog wurde bereits ein Kanban-Board angelegt, welches unter dem Reiter 'Projects/Projekte' zu erreichen ist.
 
@@ -60,6 +60,7 @@ Zur besseren Einsicht in den Fortschritt des Projekts, kann die Velocity über d
 ## Struktur des Repositories
 
 Das Repository sollte über eine klare Ornderstruktur verfügen. Hier ist eine mögliche Struktur exemplarisch vorgegeben. Je nach verwendeter Technolgie, können sich die Vorgaben von diesem Beispiel unterscheiden und sollten entsprechend verfolgt werden.
+
     .
     ├── build/                   # Kompilierte Dateien (alternativ `dist`)
     ├── docs/                    # Dokumente und Abgaben (alternativ `doc`)

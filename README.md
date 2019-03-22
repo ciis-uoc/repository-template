@@ -6,25 +6,48 @@ Das Repository bilded einen Scrum-Workflow innerhalb von GitHub ab. Dieser beinh
 
 ## Verwendung des Templates
 
-- Specify the .gitignore file depending on your technology stack
+## Backlog
+
+Für das Backlog wurde bereits ein Kanban-Board angelegt, welches unter dem Reiter 'Projects/Projekte' zu erreichen ist.
+
+![Backlog](assets/img/backlog.png)
+
+Bei Bedarf können natürlich auch weitere Kanban-Boards angelegt werden, z. B. pro Sprint, bzw. das bestehende Board um weitere Spalten erweitert werden (z. B. "In Review").
 
 ### Labels
 
 Das Repository beinhaltet bereits vordefinierte Labels für Prioritäten, Storypoints (1-40), sowie die Typen Features, Bugs, und Tests.
 
+![Labels](assets/img/labels.png)
+
 Jedes Backlog-Item sollte entsprechend mindestens mit einem Storypoints-, Prioritäts-, und Typen-Label markiert werden.
 
 Je nach Bedarf, können auch weitere Labels erstellt werden.
 
-### Backlog
+### Milestones
 
-- Bei Bedarf auch weitere Boards möglich
+Zusätzlich zu den Labels können die jeweiligen Backlog-Items sogenannten Milestones hinzugefügt werden. In diesem Template wurde für jeden Sprint ein Milestone definiert.
 
-## Repository Struktur
+![Milestones](assets/img/milestones.png)
 
-`docs`: Hier können Abgaben oder andere Dokumente, die im Verlauf des Capstone Projects erstellt werden, abgelegt werden.
+Durch die Zuordnung der Backlog-Items zu den jeweiligen Milestones, lassen sich die einzelnen Sprints besser planen.
 
-## Velocity
+## Repository Best Practices
+
+- Es sollten keine direkten Commits auf den `master`-Branch erlaubt sein; dies kann in den Einstellungen des Repositories festgelegt werden
+- Geheime Daten, wie Passwörter, Schlüssel, o.ä., sollten nicht im Quellcode auftauchen
+- Abhängigkeiten des Projekts (z. B. Node-Module, o.ä.) sollten nicht in das Projekt commited werden; siehe Hinweise in der `.gitignore`'`
+- Es sollte eine passende und ausreichend kommentierte `.gitignore` für das Projekt erstellt werden
+
+### Branch Protection für Master-Branch
+
+Die `master` Branch sollte immer potentiell deployable sein. Somit sollte es nicht möglich sein, direkt auf den `master` zu commiten, sondern dies mit Pull Requests zu realisieren.
+
+## Projektplanung
+
+### Velocity
+
+Zur besseren Einsicht in den Fortschritt des Projekts, kann die Velocity über die Sprints direkt in der `README`-Datei vermerkt werden. Entsprechende Charts können ebenfalls eingefügt werden.
 
 | Sprints | Planned | Achieved |
 |:-------:|:-------:|:--------:|
@@ -34,41 +57,16 @@ Je nach Bedarf, können auch weitere Labels erstellt werden.
 |    4    |         |          |
 |    5    |         |          |
 
-## Project Planning
+## Struktur des Repositories
 
-```mermaid
-gantt
-        dateFormat  YYYY-MM-DD
-        title Adding GANTT diagram functionality to mermaid
-        section A section
-        Completed task            :done,    des1, 2014-01-06,2014-01-08
-        Active task               :active,  des2, 2014-01-09, 3d
-        Future task               :         des3, after des2, 5d
-        Future task2               :         des4, after des3, 5d
-        section Critical tasks
-        Completed task in the critical line :crit, done, 2014-01-06,24h
-        Implement parser and jison          :crit, done, after des1, 2d
-        Create tests for parser             :crit, active, 3d
-        Future task in critical line        :crit, 5d
-        Create tests for renderer           :2d
-        Add to mermaid                      :1d
-```
+Das Repository sollte über eine klare Ornderstruktur verfügen. Hier ist eine mögliche Struktur exemplarisch vorgegeben. Je nach verwendeter Technolgie, können sich die Vorgaben von diesem Beispiel unterscheiden und sollten entsprechend verfolgt werden.
+    .
+    ├── build/                   # Kompilierte Dateien (alternativ `dist`)
+    ├── docs/                    # Dokumente und Abgaben (alternativ `doc`)
+    ├── src/                     # Quellcode Dateien (alternativ `app`)
+    ├── tests/                   # Automatisierte Tests (alternativ `tests`)
+    ├── LICENSE
+    └── README.md
+    └── .gitignore
 
-<!-- Insert image -->
-
-## Issue Template
-
-## Description
-
-As a user, I want to be able to log-in to the system to access my personal information.
-
-## Acceptance Criteria
-
-- The user is logged in if the entered e-mail matches the entered password
-- The system informs the user if the login succeeds / fails
-
-## Tasks
-
-- [ ] Build log-in form
-- [ ] Implement back-end function to check input
-- [ ] Test with correct and incorrect inputs
+Die Verwendung von Kleinbuchstaben zu Beginn von Ordner- und Dateinnamen wird empfohlen; zumindest auf der obersten Hierarchie-Ebene.
